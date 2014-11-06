@@ -7,8 +7,9 @@ var Toolbar = React.createClass( {
   componentDidMount: function(){
   },
   dowloadSpreadsheet: function( evt ){
-    var datas = this.props.spreadsheetStore.toString().replace( /^\n/, '' );
-    saveAs( new Blob( [datas], {type: "text/plain;charset=utf-8"} ), 'spreadsheet.csv' );
+    var datas = this.props.spreadsheetStore.toString().replace( /^\n/, '' ),
+        name =  prompt("Please enter your name", "spreadsheet.csv");
+    saveAs( new Blob( [datas], {type: "text/plain;charset=utf-8"} ), name || 'spreadsheet.csv' );
   },
   render: function(){
     return (

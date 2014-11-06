@@ -44,6 +44,6 @@ module.exports = function( grunt ){
 	grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask( 'dev', ['connect', 'watch'] )
+  grunt.registerTask( 'dev', ['browserify', 'connect', 'watch'] )
 	grunt.registerTask('default', ['browserify']);
 };
