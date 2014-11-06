@@ -18,15 +18,17 @@ var Spreadsheet = React.createClass( {
   },
   render: function(){
     return (
-      <table className="table table-bordered">
-        <tbody>
-        {
-          this.props.spreadsheetStore.grid().map( function( row, index ){
-            return <Row key={index} row={row} rowIndex={index} />
-          } )
-        }
-        </tbody>
-      </table>
+      <div className="col-md-12">
+        <table className="table table-bordered">
+          <tbody>
+          {
+            this.props.spreadsheetStore.grid().map( function( row, index ){
+              return <Row key={index} row={row} rowIndex={index} />
+            } )
+          }
+          </tbody>
+        </table>
+      </div>
     )
   }
 } );

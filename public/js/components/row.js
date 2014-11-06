@@ -10,7 +10,7 @@ var Row = React.createClass( {
       <tr>
         {
           this.props.row.map( function( cell, index ){
-            return <Cell keyy={index} cell={cell} cellIndex={index} {...self.props}/> 
+            return <Cell key={index} cell={cell} cellIndex={index} {...self.props}/> 
           } )
         }
       </tr>
