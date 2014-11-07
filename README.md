@@ -50,7 +50,7 @@ I used ReactJS framework for this design, following Flux's development philosoph
 
 The main actors are 
     
-* *Store*: saves the state of the full spreadsheet at any given point. Any changes in the store, it emits a chain event to update the view. 
+* *Store*: saves the state of the full spreadsheet at any given point. If changes are made in the store, it emits a chain event to update the view. 
 * *View*: consists of n row views, which, in turn, consist in m cell views. 
 * *Entity*: there is a single basic entity: the cell. It contains its data and state and knows what to show, depending on its state (editing or non-editing).
 * *Dispatcher*: directs the information flow from the view to the store, so that the view never communicates directly with the store. This allows one to keep separate view events from data state-changes.
