@@ -40,7 +40,7 @@ Formulas, and not results, are saved in the csv file.
 
 #### Loading
 
-To load an existing csv file, simply drag a file onto the grid. The grid will show the exact number of rows and files with the original data.
+To load an existing csv file, simply drag a file onto the grid. The grid will show the exact number of rows and columns with the original data.
 
 ### Architecture
 
