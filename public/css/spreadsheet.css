@@ -6,7 +6,7 @@
   min-width: 40px;
 }
 .cell.selected {
-  background: #00BFFF;
+  background: rgba(169, 208, 221, 0.490196);
 }
 .cell.selected.active {
   background: antiquewhite;
