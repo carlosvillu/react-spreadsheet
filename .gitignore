@@ -28,3 +28,4 @@ node_modules
 .lock-wscript
 public/js/main.dist.js
 npm-debug.log
+.DS_Store
