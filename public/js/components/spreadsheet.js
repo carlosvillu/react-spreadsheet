@@ -15,6 +15,7 @@ var Spreadsheet = React.createClass( {
         debug( self.props.spreadsheetStore.toString() );
       } );
     });
+    this.props.spreadsheetStore.on( 'change', function(){ self.forceUpdate() } );
   },
   render: function(){
     return (
