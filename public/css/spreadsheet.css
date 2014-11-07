@@ -1,0 +1,13 @@
+[contenteditable]:focus { 
+  outline: 0px solid transparent;
+}
+.cell {
+  min-height: 20px;
+  min-width: 40px;
+}
+.cell.selected {
+  background: rgba(169, 208, 221, 0.490196);
+}
+.cell.selected.active {
+  background: antiquewhite;
+}
