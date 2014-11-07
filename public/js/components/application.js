@@ -4,7 +4,7 @@ var React = require( 'react' ),
     Spreadsheet = require( './spreadsheet' ),
     Toolbar = require( './toolbar' ),
     SpreadsheetStore = require( '../stores/spreadsheet' ),
-    spreadsheetStore = new SpreadsheetStore( 50, 50 );
+    spreadsheetStore = new SpreadsheetStore( 20, 20 );
 
 var Application = React.createClass( {
   render: function(){
