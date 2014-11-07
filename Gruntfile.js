@@ -32,6 +32,7 @@ module.exports = function( grunt ){
         files: [
           'public/**/**/*.js',
           'public/**/*.js',
+          'public/css/*.css',
           '!public/js/main.dist.js',
           'public/index.html'
         ]
