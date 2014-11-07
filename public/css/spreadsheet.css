@@ -6,10 +6,8 @@
   min-width: 40px;
 }
 .cell.selected {
-  border: 1px solid #00BFFF;
+  background: #00BFFF;
 }
 .cell.selected.active {
-  border: 1px dotted #00BFFF;
   background: antiquewhite;
-  cursor: text;
 }
