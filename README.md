@@ -3,6 +3,23 @@ react-spreadsheet
 
 Spreadsheet as a reactJS component.
 
+### Install
+
+Dependencies: 
+
+* nodeJS 0.10
+* npm 1.4
+* grunt 0.4
+
+#### How to install
+
+        $ git clone https://github.com/carlosvillu/react-spreadsheet
+        $ cd react-spreadsheet
+        $ npm install
+        $ grunt dev
+
+Open your browser in http://localhost:3000
+
 ### Description
 
 The goal of this project is to build an online spreadsheet. It is a 40x40 grid with editable cells. Cells adapt to the data entered by the user. 
@@ -25,13 +42,6 @@ Formulas, and not results, are saved in the csv file.
 
 To load an existing csv file, simply drag a file onto the grid. The grid will show the exact number of rows and files with the original data.
 
-#### To do
-
-Version 1.1.2 
-
-* When introducing a formula, the grid should return the actual result, instead of the legend "formula result".
-* Include functionality for adding new rows and columns.
-
 ### Architecture
 
 The development is web-component oriented. Thus, the spreadhsheet is a single component that can be used in the following way, `<Spreadsheet spreadsheetStore={spreadsheetStore} />`. On the basis of this, it is very simple to create a multi-tab app with several spreadsheets, each with its own store. 
@@ -45,5 +55,11 @@ The main actors are
 * *Entity*: there is a single basic entity: the cell. It contains its data and state and knows what to show, depending on its state (editing or non-editing).
 * *Dispatcher*: directs the information flow from the view to the store, so that the view never communicates directly with the store. This allows one to keep separate view events from data state-changes.
 
+### To do
+
+Version 1.1.2 
+
+* When introducing a formula, the grid should return the actual result, instead of the legend "formula result".
+* Include functionality for adding new rows and columns.
 
 
