@@ -36,11 +36,10 @@ Cell.prototype.resolve = function( formula ){
   return "Formula result";
 };
 
-Cell.prototype.toString = function(){
-  console.log( 'is active %s and is formula %s', this.status( 'active' ), this.isFormula( this._content ) );
-  return this.status( 'active' ) ? this._content
-                                 : this.isFormula( this._content ) ? this.resolve( this._content )
-                                                                   : this._content
+Cell.prototype.toString = function( isExport ){
+  return isExport || this.status( 'active' ) ? this._content
+                                             : this.isFormula( this._content ) ? this.resolve( this._content )
+                                                                               : this._content
 };
 
 module.exports = Cell;

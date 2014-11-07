@@ -69,9 +69,9 @@ SpreadsheetStore.prototype.updateFromCSV = function( csv ){
                   .map( function( row ){ return row.split(',').map( function( content ){ return new Cell( content, self ); } ); } );
 };
 
-SpreadsheetStore.prototype.toString = function(){
+SpreadsheetStore.prototype.toString = function( isExport ){
   return _.reduce( this._grid, function( memo, row ){
-    return memo + row.map( function( cell ){ return cell.toString(); } ).join(',') + '\n';
+    return memo + row.map( function( cell ){ return cell.toString( isExport ); } ).join(',') + '\n';
   }, '\n' );
 };
 
