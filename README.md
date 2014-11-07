@@ -7,7 +7,7 @@ Spreadsheet as a reactJS component.
 
 The goal of this project is to build an online spreadsheet. It is a 40x40 grid with editable cells. Cells adapt to the data entered by the user. 
 
-When clicking a cell, the background of the cell turns blue, indicating it has been selected. Double click turns background orange, indicating it can be edited.
+When clicking a cell, the background of the cell turns blue, indicating it has been selected. Double click turns the background orange, indicating it can be edited.
 
 Cell editing allows the user to enter numeric values or strings, as well as formulas. Formulas must have the following format: =(row number, column number) {op} (row number, column number)...
 
@@ -34,6 +34,16 @@ Version 1.1.2
 
 ### Architecture
 
+The development is web-component oriented. Thus, the spreadhsheet is a single component that can be used in the following way, `<Spreadsheet spreadsheetStore={spreadsheetStore} />`. On the basis of this, it is very simple to create a multi-tab app with several spreadsheets, each with its own store. 
+
+I used ReactJS framework for this design, following Flux's development philosophy. 
+
+The main actors are 
+    
+* *Store*: saves the state of the full spreadsheet at any given point. Any changes in the store, it emits a chain event to update the view. 
+* *View*: consists of n row views, which, in turn, consist in m cell views. 
+* *Entity*: there is a single basic entity: the cell. It contains its data and state and knows what to show, depending on its state (editing or non-editing).
+* *Dispatcher*: directs the information flow from the view to the store, so that the view never communicates directly with the store. This allows one to keep separate view events from data state-changes.
 
 
 
