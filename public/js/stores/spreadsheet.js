@@ -58,7 +58,7 @@ SpreadsheetStore.prototype.grid = function(){
   return this._grid;
 };
 
-SpreadsheetStore.prototype.cell = function( coords ){
+SpreadsheetStore.prototype.cell = function( /* (y,x) */ coords ){
   return this._grid[coords[0]][coords[1]];
 };
 
