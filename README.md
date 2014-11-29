@@ -28,7 +28,7 @@ When clicking a cell, the background of the cell turns blue, indicating it has b
 
 Cell editing allows the user to enter numeric values or strings, as well as formulas. Formulas must have the following format: =(row number, column number) {op} (row number, column number)...
 
-    =(1,2) + (1,30) this will add up the contents of the two respective cells
+    =A2+B8 this will add up the contents of the two respective cells
 
 Editing ends when clicking any different cell. For formulas, the grid shows "Formula result". 
 
@@ -56,10 +56,3 @@ The main actors are
 * *Dispatcher*: directs the information flow from the view to the store, so that the view never communicates directly with the store. This allows one to keep separate view events from data state-changes.
 
 ### To do
-
-Version 1.1.2 
-
-* When introducing a formula, the grid should return the actual result, instead of the legend "formula result".
-* Include functionality for adding new rows and columns.
-
-
