@@ -1,5 +1,7 @@
 'use strict';
 
+var Formula = require( './formula' );
+
 var FORMULA = /^=/;
 
 var Cell = function( content, spreadsheet ){
@@ -29,11 +31,11 @@ Cell.prototype.status = function( status, value ){
 };
 
 Cell.prototype.isFormula = function(){
-  return !!this._content.match( FORMULA );
+  return !!this._content.match( FORMULA);
 };
 
 Cell.prototype.resolve = function( formula ){
-  return "Formula result";
+  return new Formula( formula, this._spreadsheet ).resolve();
 };
 
 Cell.prototype.toString = function( isExport ){
