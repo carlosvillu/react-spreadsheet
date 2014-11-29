@@ -7,6 +7,7 @@ var Cell = require( '../entities/cell' ),
 
 var SpreadsheetStore = function( width, height, def ){
   var self = this;
+  this._def = def;
   this._dispatcherToken = SpreadsheetDispatcher.register( _.bind( this.dispatcherCallback, this ) );
   this._grid = _.range( width ).map( function(row ){
     return _.range( height ).map( function( cell ){
@@ -17,7 +18,22 @@ var SpreadsheetStore = function( width, height, def ){
 inherits( SpreadsheetStore, EventEmitter );
 
 SpreadsheetStore.prototype.dispatcherCallback = function( payload ){
+  var self = this;
   switch( payload.actionType ){
+
+    case 'spreadsheet-add-row':
+      this._grid[this._grid.length++] = _.range( /* One of them */this._grid[0].length ).map( function( cell ){
+        return new Cell( self._def, self );
+      } ); 
+      this.emit( 'change' );
+      break;
+
+    case 'spreadsheet-add-column':
+      this._grid.forEach( function( row ){
+        row[row.length++] = new Cell( self._def, self );
+      } );
+      this.emit( 'change' );
+      break;
     
     case 'cell-update':
       this.cell( payload.cell ).content( payload.value );
