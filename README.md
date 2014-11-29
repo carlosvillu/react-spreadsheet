@@ -56,9 +56,3 @@ The main actors are
 * *Dispatcher*: directs the information flow from the view to the store, so that the view never communicates directly with the store. This allows one to keep separate view events from data state-changes.
 
 ### To do
-
-Version 1.1.2 
-
-* Include functionality for adding new rows and columns.
-
-
