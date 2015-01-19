@@ -56,3 +56,7 @@ The main actors are
 * *Dispatcher*: directs the information flow from the view to the store, so that the view never communicates directly with the store. This allows one to keep separate view events from data state-changes.
 
 ### To do
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/carlosvillu/react-spreadsheet/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
